@@ -1,0 +1,32 @@
+{
+  "name": "@foss-earth/accounts",
+  "version": "0.1.0",
+  "private": true,
+  "description": "FOSS Earth accounts, sign-in, and the hosted Google 3D Tiles proxy.",
+  "license": "AGPL-3.0-only",
+  "type": "module",
+  "bin": {
+    "accounts": "./src/cli.ts"
+  },
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "start": "node --experimental-strip-types src/server.ts",
+    "accounts": "node --experimental-strip-types src/cli.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint . --cache --cache-strategy content --cache-location node_modules/.cache/eslint/",
+    "test": "vitest run",
+    "check": "npm run typecheck && npm run lint && npm test"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.39.4",
+    "@types/node": "24.12.4",
+    "eslint": "9.39.4",
+    "globals": "17.6.0",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.59.3",
+    "vitest": "4.1.6"
+  }
+}
